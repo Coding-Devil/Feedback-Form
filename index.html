@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>We'd love your feedback!</h1>
+        <p>Your thoughts help us understand what we're doing right and what we can improve.</p>
+        <form action="https://sheetdb.io/api/v1/7872s9xmkl197" method="post" id="feedback-form">
+            <div class="input-group">
+                <input type="text" id="usn" name="usn" required>
+                <label for="usn">USN</label>
+            </div>
+            <div class="input-group">
+                <input type="text" id="name" name="name" required>
+                <label for="name">Name</label>
+            </div>
+            <div class="rating-section">
+                <label>Your rating :</label>
+                <div class="stars" data-rating="0">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <textarea id="feedback" name="feedback" rows="2" required></textarea>
+                <label for="feedback">Any feedback ?</label>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
