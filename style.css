@@ -95,7 +95,7 @@ p {
     transition: color 0.2s ease;
 }
 
-.star:hover, .star:hover ~ .star, .stars:hover .star {
+.star:hover, .star:hover ~ .star{
     color: #ffbf00 !important;
 }
 
