@@ -1,31 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const stars = document.querySelectorAll('.star');
-    let rating = 0;
-
-    stars.forEach(star => {
-        star.addEventListener('click', function() {
-            rating = this.getAttribute('data-value');
-            updateStars(rating);
-        });
-    });
-
-    function updateStars(rating) {
-        stars.forEach(star => {
-            star.style.color = rating >= star.getAttribute('data-value') ? '#ffd700' : '#ddd';
-        });
-    }
-
     const form = document.getElementById('feedback-form');
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
+        // Collecting data from form elements
         const formData = {
             usn: document.getElementById('usn').value,
             name: document.getElementById('name').value,
-            rating: rating,
+            contentDelivery: document.querySelector('input[name="contentDelivery"]:checked').value,
+            topicRelevance: document.querySelector('input[name="topicRelevance"]:checked').value,
+            overallExperience: document.getElementById('overallExperience').value,
+            rating: document.querySelector('input[name="rating"]:checked').value,
             feedback: document.getElementById('feedback').value,
         };
 
+        // Sending the form data to the Google Sheet via SheetDB
         fetch('https://sheetdb.io/api/v1/7872s9xmkl197', {
             method: 'POST',
             headers: {
@@ -36,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
+            // Redirect to thank you page
             window.location.href = 'next.html';
         })
         .catch((error) => {
