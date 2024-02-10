@@ -13,26 +13,42 @@
         <p>Your thoughts help us understand what we're doing right and what we can improve.</p>
         <form action="https://sheetdb.io/api/v1/7872s9xmkl197" method="post" id="feedback-form">
             <div class="input-group">
-                <input type="text" id="usn" name="usn" required>
-                <label for="usn">USN</label>
+              <label for="usn">USN</label>  
+              <input type="text" id="usn" name="usn" pattern="1RN\d{2}[A-Z]{2}\d{3}" title="USN is incorrect" required>
+                
             </div>
             <div class="input-group">
+              <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
-                <label for="name">Name</label>
+                
             </div>
-            <div class="rating-section">
-                <label>Your rating :</label>
-                <div class="stars" data-rating="0">
-                    <span class="star" data-value="1">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
-                </div>
+            <h3>How was the content delivered:</h3>
+            <div class="input-group">
+                <label class="radio" for="contentDelivery"><input type="radio" name="contentDelivery" value="Very Good" required> Very Good</label>
+                <label class="radio" for="contentDelivery"><input type="radio" name="contentDelivery" value="Good"> Good</label>
+                <label class="radio" for="contentDelivery"><input type="radio" name="contentDelivery" value="Average"> Average</label>
+                <label class="radio" for="contentDelivery"><input type="radio" name="contentDelivery" value="Bad"> Bad</label>
             </div>
             <div class="input-group">
-                <textarea id="feedback" name="feedback" rows="2" required></textarea>
-                <label for="feedback">Any feedback ?</label>
+                <h3>Was the topic discussed relevant:</h3>
+                <label class="radio" for="topicRelevance"><input type="radio" name="topicRelevance" value="Yes" required> Yes</label>
+                <label class="radio" for="topicRelevance"><input type="radio" name="topicRelevance" value="No"> No</label>
+            </div>
+            <div class="input-group">
+                <h3>Overall experience of the workshop:</h3>
+                <textarea id="overallExperience" name="overallExperience" placeholder="Feedback" rows="2" required></textarea>
+            </div>
+            <h3>Rating:</h3>
+            <div class="input-group">
+                <label class="radio" for="rating"><input type="radio" name="rating" value="Excellent" required> Excellent</label>
+                <label class="radio" for="rating"><input type="radio" name="rating" value="Very Good"> Very Good</label>
+                <label class="radio" for="rating"><input type="radio" name="rating" value="Average"> Average</label>
+                <label class="radio" for="rating"><input type="radio" name="rating" value="Bad"> Bad</label>
+            </div>
+            <div class="input-group">
+              <label for="feedback">Any feedback?</label>  
+              <textarea id="feedback" name="feedback" rows="2" required></textarea>
+                
             </div>
             <button type="submit" class="submit-btn">Submit</button>
         </form>
