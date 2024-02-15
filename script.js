@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             console.log('Success:', data);
             // Redirect to thank you page
-            window.location.href = 'form.html';
+            window.location.href = 'next.html';
         })
         .catch((error) => {
             console.error('Error:', error);
